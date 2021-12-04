@@ -80,7 +80,7 @@ class XmlWriter(Writer):
         self.filename = filename
         _filetype = filename.lower().rsplit(".")[-1]
         if _filetype != "xml":
-            raise exceptions.UnSupportedTypeException("Unsupported file type \nneed file with .json extension")
+            raise exceptions.UnSupportedTypeException("Unsupported file type \nneed file with .xml extension")
 
     def write_file(self, data: dict) -> None:
 
