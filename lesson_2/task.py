@@ -17,6 +17,14 @@ True
 >>> Version('1.3.42') == Version('42.3.1')
 False
 
+>>> Version('1.3.42') <= Version('42.3.1')
+True
+
+>>> Version('1.3.42') >= Version('42.3.1')
+False
+
+>>> Version("1.1.1b") >= Version("1.0.10-alpha.beta")
+True
 """
 # from __future__ import annotations # for python3.7+ use annotations without "ClassName" in type hints
 import os
@@ -36,8 +44,18 @@ class Version:
     def __gt__(self, other: "Version") -> bool:
         return LooseVersion(self.version) > LooseVersion(other.version)
 
+    def __ge__(self, other):
+        return LooseVersion(self.version) > LooseVersion(other.version) \
+               or\
+               LooseVersion(self.version) == LooseVersion(other.version)
+
     def __lt__(self, other: "Version") -> bool:
         return LooseVersion(self.version) < LooseVersion(other.version)
+
+    def __le__(self, other):
+        return LooseVersion(self.version) < LooseVersion(other.version) \
+               or\
+               LooseVersion(self.version) == LooseVersion(other.version)
 
 
 def main():
