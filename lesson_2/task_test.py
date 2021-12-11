@@ -1,6 +1,6 @@
 import pytest
 
-from lesson_2.task import Version
+from lesson_2.task_2 import Version
 
 
 versions_eq = [("1.0", "1.0"), ("1.42.1", "1.42.1"), ("0.1", "0.1")]
