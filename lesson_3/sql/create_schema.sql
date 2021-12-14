@@ -2,9 +2,9 @@ CREATE TABLE IF NOT EXISTS student(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     birthday DATE NOT NULL,
-    room_id INT,
+    room INT,
     sex VARCHAR(1) NOT NULL,
-    FOREIGN KEY (room_id)
+    FOREIGN KEY (room)
         REFERENCES room(id)
 ) ENGINE=INNODB;
 
